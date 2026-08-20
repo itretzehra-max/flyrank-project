@@ -248,4 +248,56 @@ footer a:hover{color:var(--teal-deep);}
   .trail-points{flex-direction:column;gap:20px;}
   .trail-point{width:100%;}
   .trail-line{display:none;}
+  /* --- Week 3: interactivity & visual rhythm --- */
+
+/* Cards lift subtly on hover — signals "this is worth reading" */
+.card{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15,110,86,0.08);
+  border-color: var(--teal);
+}
+
+/* Skill tags get a small hover state too, ties accent color through the page */
+.skill{
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.skill:hover{
+  background: var(--teal);
+  color:#fff;
+  border-color: var(--teal);
+}
+
+/* Trail dots grow slightly on hover — small, tasteful motion on your signature element */
+.trail-dot{
+  transition: transform .15s ease;
+}
+.trail-point:hover .trail-dot{
+  transform: scale(1.3);
+}
+
+/* Gentle fade-and-rise on page load so content doesn't just "appear" */
+section, .hero{
+  animation: rise .5s ease both;
+}
+.hero{animation-delay:0s;}
+section:nth-of-type(1){animation-delay:.05s;}
+section:nth-of-type(2){animation-delay:.1s;}
+section:nth-of-type(3){animation-delay:.15s;}
+section:nth-of-type(4){animation-delay:.2s;}
+
+@keyframes rise{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Respect users who prefer no motion */
+@media (prefers-reduced-motion: reduce){
+  .card, .skill, .trail-dot, section, .hero{
+    animation:none;
+    transition:none;
+  }
+}
 }
