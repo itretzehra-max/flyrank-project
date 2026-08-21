@@ -59,6 +59,7 @@
 <p><strong>What I did:</strong> Built a Python tool (originally wrapped in a Streamlit web app) that asks structured yes/no questions about how an AI system is used — does it fall under a prohibited use, does it operate in a high-risk domain like employment or credit, does it interact directly with users in a way that could deceive them — and maps the answers to the correct EU AI Act risk tier plus the specific mitigations that tier requires.</p>
 <p><strong>What I found (example run):</strong> Classifying a sample AI-powered resume-screening tool, the system flagged it as High Risk (used in the employment domain) and automatically listed the four required mitigations: a conformity assessment, technical documentation and a risk management system, human oversight with override capability, and activity logging for auditability.</p>
 <p><strong>What came of it:</strong> A 2-minute interactive session that replaces a manual read-through of the regulation with a structured decision tree — someone can classify a system and get the exact list of compliance obligations, not just a vague "this might be risky."</p>
+            <p><strong>Code:</strong> <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/risk_register.py" target="_blank">risk_register.py</a></p>
       </div>
       <div class="card">
         <h3>AI System Compliance Case Study</h3>
@@ -66,6 +67,7 @@
 <p><strong>What I did:</strong> Built a Python/Pandas script that audits a sample loan-approval dataset (30 applicants, split evenly by gender) for bias. It calculates approval rates by group, applies the "four-fifths rule" (a standard regulatory fairness threshold), and cross-checks whether a legitimate factor like credit score actually explains any gap.</p>
 <p><strong>What I found:</strong> On the sample dataset, female applicants had a 40% approval rate versus 73.3% for male applicants — a 33-point gap. The four-fifths rule flagged this immediately (selection rate ratio of 0.55, well below the 0.80 threshold). But the average credit score gap between groups was only 19 points — too small to explain a 33-point approval gap on its own, meaning the disparity likely isn't fully justified by credit risk alone.</p>
 <p><strong>What came of it:</strong> A reusable audit script that gives compliance teams a concrete, quantified flag — not just "check for bias" but an actual pass/fail signal plus the reasoning behind it, so a human reviewer knows exactly what to investigate next.</p>
+        <p><strong>Code:</strong> <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/bias_audit.py" target="_blank">bias_audit.py</a> · <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/sample_loan_data.csv" target="_blank">sample_loan_data.csv</a></p>
       </div>
           <div class="card">
         <h3>Live Contact Form</h3>
